@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/buku','BukuController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('book', 'BookController');
